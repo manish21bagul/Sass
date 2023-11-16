@@ -1,0 +1,62 @@
+/*
+    1.Variable
+    2.Nesting
+    3.Operators
+    4.Maps
+    5.Ampersand -> &
+    6.Mixin
+    7.Extend
+    8.Partials
+    9.Problem and solution 
+        Q :- If you have deleted .css files how to get the those files ?
+        => Restart the compiler 
+        => Saas Compiler generate the new updated files
+    10. Change css file generation location
+        Step-1 - Stop Live Sass Compiler
+        Step-2 - Setting -> Extension -> Live Saas Compiler -> Formats -> Edit Settings -> Then json file will open change there path whatever you want e.g. savePath : "CSS/"
+        Step-3 - Start Live Saas Compiler
+*/
+
+@import "_common.scss";
+
+header{
+    background-color: royalblue;
+     @include flexbox(row,space-evenly,center);
+    h2{
+        font-family:sans-serif;
+        // &::before{
+        //     content: "Hi";
+        // }
+    }
+    nav{
+        a{
+            color: $var-white;
+            text-decoration: none;
+            margin-right: 20px;
+            // &:hover{
+            //     background-color: darkblue;
+            // }
+        }
+
+    }
+    button{
+        @extend .button;
+        &:hover{
+            background-color: green;
+        }
+    }
+}
+h1{
+    color:$var-txt;
+    font-size: map-get($map: $font-size, $key:"desktop");
+}
+
+@media (max-width:900px){
+    h1{
+        font-size:map-get($map: $font-size, $key:"mobile");
+    }
+    header{
+        @include flexbox(column,space-evenly);
+    }
+
+}

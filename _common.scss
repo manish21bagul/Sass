@@ -1,0 +1,21 @@
+.button{
+    color: white;
+    background-color: darkblue;
+    border: 2px solid #000;
+    padding: 10px 15px;
+}
+
+$var-bg :yellow;
+$var-txt:blue;
+$var-white:white;
+$var-fnt-lg:50px;
+$var-fnt-sm:16px;
+
+$font-size : ("mobile": 16px, "tablet":25px, "desktop": 70px);
+
+@mixin flexbox($fd, $jc, $ai:center){
+    display: flex;
+    flex-direction:$fd;
+    justify-content: $jc;
+    align-items: $ai;
+}

@@ -1,0 +1,7 @@
+@import "common";
+body{
+    background-color: #f0f0f0;
+}
+button{
+    @extend .button
+}
